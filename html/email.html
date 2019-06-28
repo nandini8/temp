@@ -1,0 +1,69 @@
+<html>
+<head>
+<script type="text/javascript">
+        function yesnoCheck()
+{
+
+        if(document.getElementById('yesCheck').checked)
+	{
+                document.getElementById('ifYes').style.visibility = 'visible';
+	}
+		
+        else  
+                document.getElementById('ifYes').style.visibility = 'hidden';
+        }
+        </script> 
+<script type="text/javascript">
+        function CheckColor(val){
+var ele=document.getElementById('des');
+
+        if(val==' ')
+                ele.style.display='none';
+        else  
+                ele.style.display='block';
+        }
+        </script> 
+
+<title>Email Sent </title>
+</head>
+<body>
+   <form action='http://192.168.43.190/cgi-bin/e.py'>
+     <b>Do you want to use another id rather than psinghal22121997@gmail.com to sent ?</b>
+                <br><br>
+                Yes<input type='radio' name='yesno' onclick="javascript:yesnoCheck();" id='yesCheck'>
+                 No<input type='radio' name='yesno' onclick="javascript:yesnoCheck();" id='noCheck'><br>
+ 
+		<div id="ifYes" style="visiblity:hidden">
+     	        <table>	
+		<tr>
+		<td><b>Enter user name  </b></td>
+               	<td><input type="text" name="user" id="yes"></td>
+		<tr>
+		<tr>
+                <td><b>Password  </b></td>
+                <td><input type=password name="passwd" ></td>
+		<p>Note: You need to less secure your email to send
+                </table>
+		</div>
+	<table>
+        <tr>
+        <td><b> To Whom </b></td>
+        <td><input type=text name=receiver /></td>
+        </tr>
+
+        <tr>
+        <td><b> Subject </b></td>
+        <td><input type=text name=subject /></td>
+        </tr>
+
+         <tr>
+         <td><b>Message </b></td>
+         <td><input type=text name=message /></td>
+ 
+          </table>
+         
+         <input type="submit" name='Send Mail' />
+                </form>
+
+</body>
+</html>
